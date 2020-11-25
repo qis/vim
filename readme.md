@@ -7,7 +7,6 @@ Clone repository and install fonts.
 ```cmd
 cd %UserProfile%
 git clone https://github.com/qis/vim vimfiles
-start vimfiles\fonts
 ```
 
 Configure `vim` and `nvim` in WSL.
