@@ -80,6 +80,9 @@ set imsearch=0                    " input mode in search mode
 " Indenting
 set cino=:0,g0,l1,(s,Ws,ws,j1
 
+" Files
+set path+=**
+
 " Tabs
 set shiftwidth=2                  " insert shiftwidth spaces instead of a single tab
 set softtabstop=2                 " insert number of spaces instead of tabs while editing
