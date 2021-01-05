@@ -73,6 +73,9 @@ set conceallevel=0                " do not hide concealed text
 set concealcursor=inv             " conceal cursor modes
 set nofoldenable                  " disable folding
 set noeol                         " no newline at the end of a file
+set keymap=russian-jcukenwin      " russian keymap
+set iminsert=0                    " input mode in insert mode
+set imsearch=0                    " input mode in search mode
 
 " Indenting
 set cino=:0,g0,l1,(s,Ws,ws,j1
