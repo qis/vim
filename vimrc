@@ -80,7 +80,8 @@ set imsearch=0                    " input mode in search mode
 " Indenting
 set cino=:0,g0,l1,(s,Ws,ws,j1
 
-" Files
+" Path
+set shellslash
 set path+=**
 
 " Tabs
