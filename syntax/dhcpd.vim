@@ -80,7 +80,7 @@ syn keyword dhcpdOption dhcp-lease-time dhcp-max-message-size dhcp-message
 syn keyword dhcpdOption dhcp-message-type dhcp-option-overload
 syn keyword dhcpdOption dhcp-parameter-request-list dhcp-rebinding-time
 syn keyword dhcpdOption dhcp-renewal-time dhcp-requested-address
-syn keyword dhcpdOption dhcp-server-identifier domain-name domain-name-servers
+syn keyword dhcpdOption dhcp-server-identifier domain-name domain-search domain-name-servers
 syn keyword dhcpdOption extensions-path finger-server font-servers host-name
 syn keyword dhcpdOption ieee802-3-encapsulation ien116-name-servers
 syn keyword dhcpdOption impress-servers interface-mtu irc-server log-servers
