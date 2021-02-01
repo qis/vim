@@ -169,12 +169,10 @@ endfunction
 au BufReadPost * call RestoreCursor()
 
 " File Type
-let g:is_kornshell=1
-autocmd BufRead,BufNewFile *.dart set filetype=dart
+autocmd BufRead,BufNewFile *.json set filetype=json5
 
 " File Type Settings
 autocmd FileType make,changelog set noexpandtab
-autocmd FileType json highlight link jsonCommentError Comment
 
 " Tab Line
 set showtabline=2
@@ -186,8 +184,9 @@ set laststatus=2
 set nomodeline
 
 " Plugins
-let g:airline_powerline_fonts = 0
+let g:is_kornshell=1
 
+let g:airline_powerline_fonts = 0
 let g:airline_extensions = [ "branch", "tabline" ]
 let g:airline_section_z = "%3p%% \u00B6 %3l/%-3L \u039E %3v"
 
@@ -206,3 +205,37 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tabs = 1
+
+let g:markdown_minlines = 128
+let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = [
+  \"asm",
+  \"bind",
+  \"bindzone",
+  \"c",
+  \"cmake",
+  \"cmd=dosbatch",
+  \"conf=sh",
+  \"cpp",
+  \"css",
+  \"dhcpd",
+  \"diff",
+  \"fstab",
+  \"html",
+  \"ini=dosini",
+  \"json=json5",
+  \"make",
+  \"makefile=make",
+  \"nft=nftables",
+  \"nginx",
+  \"ntp",
+  \"patch=diff",
+  \"ps=ps1",
+  \"ps1",
+  \"rc",
+  \"sh",
+  \"sql",
+  \"sudoers",
+  \"xml",
+  \"yaml",
+  \]
