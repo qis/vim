@@ -226,6 +226,9 @@ let g:markdown_fenced_languages = [
   \"json=json5",
   \"make",
   \"makefile=make",
+  \"manifest=xml",
+  \"network=networkd",
+  \"networkd",
   \"nft=nftables",
   \"nginx",
   \"ntp",
@@ -236,6 +239,8 @@ let g:markdown_fenced_languages = [
   \"sh",
   \"sql",
   \"sudoers",
+  \"system=systemd",
+  \"systemd",
   \"xml",
   \"yaml",
   \]
