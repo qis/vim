@@ -127,6 +127,7 @@ else
   noremap <S-Insert> "+p
   inoremap <S-Insert> <C-p><C-r>+<C-p>
   set pastetoggle=<C-p>
+  vnoremap s "+ygvs
 endif
 
 " Russian
