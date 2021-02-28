@@ -30,3 +30,22 @@ sudo ln -s /etc/vim /etc/xdg/nvim
 sudo touch /root/.viminfo
 touch ~/.viminfo
 ```
+
+Configure desktop integration.
+
+```sh
+sudo apt install fonts-dejavu fonts-ipaexfont
+
+cat > ~/.local/share/applications/defaults.list <<'EOF'
+[Default Applications]
+text/plain=gvim.desktop
+text/xml=gvim.desktop
+text/x-chdr=gvim.desktop
+text/x-csrc=gvim.desktop
+text/x-c++hdr=gvim.desktop
+text/x-c++src=gvim.desktop
+EOF
+
+sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /usr/bin/gvim 100
+sudo apt purge gedit
+```
