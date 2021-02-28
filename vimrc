@@ -5,14 +5,16 @@ set nocompatible
 " User Interface
 if has("gui_running")
   " Font
-  set guifont=DejaVu_LGC_Sans_Mono:h9:cANSI:qDRAFT
-  set guifontwide=IPAexGothicMono:h11:cANSI:qDRAFT
+  if has("win32")
+    set guifont=DejaVu_LGC_Sans_Mono:h9:cANSI:qDRAFT
+    set guifontwide=IPAexGothicMono:h11:cANSI:qDRAFT
+  else
+    set guifont=DejaVu\ Sans\ Mono\ 9
+    set guifontwide=IPAexGothicMono\ 11
+  endif
 
   " Controls
-  set guioptions=ac
-  "if has("win32")
-  "  set guioptions+=r
-  "endif
+  set guioptions=acr
 
   " Window
   set columns=125 lines=66
@@ -24,9 +26,9 @@ if has("gui_running")
   set gcr=n-v:hor10-blinkoff800-blinkon800-blinkwait800
   set gcr=i-r:hor100-ver15-blinkoff800-blinkon800-blinkwait1500
 
-  " Input Method
-  set iminsert=0
-  set imsearch=-1
+  if !has("win32")
+    autocmd GUIEnter * set vb t_vb=
+  endif
 elseif !has("nvim") && v:version < 800
   autocmd BufEnter * :redrawstatus
 endif
@@ -77,6 +79,9 @@ set keymap=russian-jcukenwin      " russian keymap
 set iminsert=0                    " input mode in insert mode
 set imsearch=0                    " input mode in search mode
 
+" Autocompletion
+set wildcharm=<Tab>
+
 " Indenting
 set cino=:0,g0,l1,(s,Ws,ws,j1
 
@@ -111,11 +116,27 @@ set list
 " Mouse
 if has("mouse")
   set mouse=a
+  set mouseshape=i-r:beam,n:arrow,v:arrow,ve:arrow
 endif
 
 " Copy & Paste
-vmap <S-c> "+y
-vmap <C-c> "*y
+set nopaste
+if has("win32")
+  vmap <C-c> "*y
+else
+  noremap <C-c> "+y
+  noremap <S-Insert> "+p
+  inoremap <S-Insert> <C-p><C-r>+<C-p>
+  set pastetoggle=<C-p>
+endif
+
+" Commands
+cnoreabbrev o e
+cnoreabbrev open edit
+cnoreabbrev t tabnew
+
+" Redo
+nnoremap <silent> r <C-r>
 
 " Clear Search
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
@@ -148,8 +169,13 @@ imap <F6> <ESC>:w<CR>:make test<CR>
 map <F7> :w<CR>:make<CR>
 imap <F7> <ESC>:w<CR>:make<CR>
 
-" Backspace
+" Word
 set backspace=eol,start,indent
+
+if has("gui_running")
+  imap <C-BS> <C-w>
+  inoremap <C-Del> <C-o>dw
+endif
 
 " Restore Cursor
 if has("win32")
@@ -164,6 +190,7 @@ function! RestoreCursor()
     else | exe "norm $"
     endif
   endif
+  redraw!
 endfunction
 
 au BufReadPost * call RestoreCursor()
