@@ -75,7 +75,6 @@ set conceallevel=0                " do not hide concealed text
 set concealcursor=inv             " conceal cursor modes
 set nofoldenable                  " disable folding
 set noeol                         " no newline at the end of a file
-set keymap=russian-jcukenwin      " russian keymap
 set iminsert=0                    " input mode in insert mode
 set imsearch=0                    " input mode in search mode
 
@@ -129,6 +128,11 @@ else
   inoremap <S-Insert> <C-p><C-r>+<C-p>
   set pastetoggle=<C-p>
 endif
+
+" Russian
+set keymap=russian-jcukenwin
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:
+set langmap+=,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " Commands
 cnoreabbrev o e
