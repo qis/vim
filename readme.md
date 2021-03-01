@@ -44,6 +44,7 @@ text/x-chdr=gvim.desktop
 text/x-csrc=gvim.desktop
 text/x-c++hdr=gvim.desktop
 text/x-c++src=gvim.desktop
+text/x-qml=gvim.desktop
 EOF
 
 sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /usr/bin/gvim 100

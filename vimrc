@@ -131,7 +131,7 @@ else
 endif
 
 " Russian
-set keymap=russian-jcukenwin
+"set keymap=russian-jcukenwin
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:
 set langmap+=,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
