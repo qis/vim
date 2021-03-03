@@ -38,9 +38,9 @@ syntax on
 autocmd BufEnter * :syntax sync fromstart
 
 if !empty($DISPLAY) || has("win32")
-  let &t_Co=256
-  let &t_ti="\e[?1049h"
-  let &t_te="\e[?1049l"
+  let &t_Co = 256
+  let &t_ti = "\e[?1049h"
+  let &t_te = "\e[?1049l"
 else
   set t_Co=16
   set t_Sf=[3%dm
@@ -139,6 +139,7 @@ set langmap+=,фисвуапршолдьтщзйкыегмцчня;abcdefghijklm
 cnoreabbrev o e
 cnoreabbrev open edit
 cnoreabbrev t tabnew
+let mapleader = 'k'
 
 " Redo
 nnoremap <silent> r <C-r>
@@ -206,6 +207,15 @@ autocmd BufRead,BufNewFile *.json set filetype=json5
 " File Type Settings
 autocmd FileType make,changelog set noexpandtab
 
+" File Browser
+set browsedir=current
+
+let g:netrw_menu = 0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
+nnoremap <Leader>o :Texplore<CR>:file [files]\ <CR>
+
 " Tab Line
 set showtabline=2
 
@@ -216,7 +226,7 @@ set laststatus=2
 set nomodeline
 
 " Plugins
-let g:is_kornshell=1
+let g:is_kornshell = 1
 
 let g:airline_powerline_fonts = 0
 let g:airline_extensions = [ "branch", "tabline" ]
