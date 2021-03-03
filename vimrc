@@ -27,15 +27,15 @@ if has("gui_running")
   set gcr=i-r:hor100-ver15-blinkoff800-blinkon800-blinkwait1500
 
   if !has("win32")
-    autocmd GUIEnter * set vb t_vb=
+    autocmd GUIEnter * :silent! set vb t_vb=
   endif
 elseif !has("nvim") && v:version < 800
-  autocmd BufEnter * :redrawstatus
+  autocmd BufEnter * :silent! redrawstatus
 endif
 
 " Colors
 syntax on
-autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter * :silent! syntax sync fromstart
 
 if !empty($DISPLAY) || has("win32")
   let &t_Co = 256
@@ -166,6 +166,8 @@ noremap <silent> <M-Left> :tabprev<CR>
 inoremap <silent> <M-Left> <C-o>:tabprev<CR>
 
 " Make
+set makeprg=make\ --no-print-directory
+
 map <F5> :w<CR>:make run<CR>
 imap <F5> <ESC>:w<CR>:make run<CR>
 
@@ -199,13 +201,13 @@ function! RestoreCursor()
   redraw!
 endfunction
 
-au BufReadPost * call RestoreCursor()
+autocmd BufReadPost * :silent! call RestoreCursor()
 
 " File Type
-autocmd BufRead,BufNewFile *.json set filetype=json5
+autocmd BufRead,BufNewFile *.json :silent! set filetype=json5
 
 " File Type Settings
-autocmd FileType make,changelog set noexpandtab
+autocmd FileType make,changelog :silent! set noexpandtab
 
 " File Browser
 set browsedir=current
