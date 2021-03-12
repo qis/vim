@@ -147,6 +147,9 @@ map ё `
 map ? /
 map , /
 
+cnoreabbrev е t
+cnoreabbrev у e
+cnoreabbrev щ e
 cnoreabbrev ц w
 cnoreabbrev й q
 cnoreabbrev цф wa
@@ -155,7 +158,6 @@ cnoreabbrev цйф wqa
 
 " Commands
 cnoreabbrev o e
-cnoreabbrev open edit
 cnoreabbrev t tabnew
 let mapleader = 'k'
 
