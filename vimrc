@@ -9,8 +9,8 @@ if has("gui_running")
     set guifont=DejaVu_LGC_Sans_Mono:h9:cANSI:qDRAFT
     set guifontwide=IPAexGothicMono:h11:cANSI:qDRAFT
   else
-    set guifont=DejaVu\ Sans\ Mono\ 9
-    set guifontwide=IPAexGothicMono\ 11
+    set guifont=DejaVu\ Sans\ Mono\ 10
+    set guifontwide=IPAexGothicMono\ 12
   endif
 
   " Controls
@@ -131,9 +131,27 @@ else
 endif
 
 " Russian
-"set keymap=russian-jcukenwin
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:
-set langmap+=,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯХЪ;ABCDEFGHIJKLMNOPQRSTUVWXYZ{},
+set langmap+=фисвуапршолдьтщзйкыегмцчняхъ;abcdefghijklmnopqrstuvwxyz[]
+
+map Ж :
+map Э "
+map ж ;
+map э '
+map Б <
+map Ю >
+map б ,
+map ю .
+map Ё ~
+map ё `
+map ? /
+map , /
+
+cnoreabbrev ц w
+cnoreabbrev й q
+cnoreabbrev цф wa
+cnoreabbrev цй wq
+cnoreabbrev цйф wqa
 
 " Commands
 cnoreabbrev o e
