@@ -36,6 +36,24 @@ Configure desktop integration.
 ```sh
 sudo apt install fonts-dejavu fonts-ipaexfont
 
+cat > ~/.local/share/applications/defaults.list <<'EOF'
+[Default Applications]
+application/x-shellscript=gvim.desktop
+text/plain=gvim.desktop
+text/x-makefile=gvim.desktop
+text/x-c++hdr=gvim.desktop
+text/x-c++src=gvim.desktop
+text/x-c++=gvim.desktop
+text/x-chdr=gvim.desktop
+text/x-csrc=gvim.desktop
+text/x-c=gvim.desktop
+text/x-java=gvim.desktop
+text/x-kotlin=gvim.desktop
+text/x-moc=gvim.desktop
+text/x-qml=gvim.desktop
+text/xml=gvim.desktop
+EOF
+
 cat > ~/.local/share/applications/gvim.desktop <<'EOF'
 [Desktop Entry]
 Name=gVim
