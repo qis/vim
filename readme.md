@@ -39,6 +39,7 @@ sudo apt install fonts-dejavu fonts-ipaexfont
 cat > ~/.local/share/applications/defaults.list <<'EOF'
 [Default Applications]
 application/x-shellscript=gvim.desktop
+text/html=gvim.desktop
 text/plain=gvim.desktop
 text/x-makefile=gvim.desktop
 text/x-c++hdr=gvim.desktop
