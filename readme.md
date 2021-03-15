@@ -36,16 +36,19 @@ Configure desktop integration.
 ```sh
 sudo apt install fonts-dejavu fonts-ipaexfont
 
-cat > ~/.local/share/applications/defaults.list <<'EOF'
-[Default Applications]
-text/plain=gvim.desktop
-text/xml=gvim.desktop
-text/x-chdr=gvim.desktop
-text/x-csrc=gvim.desktop
-text/x-c++hdr=gvim.desktop
-text/x-c++src=gvim.desktop
-text/x-qml=gvim.desktop
+cat > ~/.local/share/applications/gvim.desktop <<'EOF'
+[Desktop Entry]
+Name=gVim
+Exec=gvim -fp %N
+Terminal=false
+Type=Application
+Icon=gvim
+Categories=Utility;TextEditor;
+StartupNotify=true
+MimeType=application/x-shellscript;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-c++;text/x-chdr;text/x-csrc;text/x-c;text/x-java;text/x-kotlin;text/x-moc;text/x-qml;text/xml
 EOF
+
+update-desktop-database ~/.local/share/applications
 
 sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /usr/bin/gvim 100
 sudo apt purge gedit
