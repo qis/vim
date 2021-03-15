@@ -54,18 +54,6 @@ text/x-qml=gvim.desktop
 text/xml=gvim.desktop
 EOF
 
-cat > ~/.local/share/applications/gvim.desktop <<'EOF'
-[Desktop Entry]
-Name=gVim
-Exec=gvim -fp %N
-Terminal=false
-Type=Application
-Icon=gvim
-Categories=Utility;TextEditor;
-StartupNotify=true
-MimeType=application/x-shellscript;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-c++;text/x-chdr;text/x-csrc;text/x-c;text/x-java;text/x-kotlin;text/x-moc;text/x-qml;text/xml
-EOF
-
 update-desktop-database ~/.local/share/applications
 
 sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /usr/bin/gvim 100
