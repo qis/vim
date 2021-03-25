@@ -17,7 +17,7 @@ if has("gui_running")
   set guioptions=acr
 
   " Window
-  set columns=125 lines=66
+  set columns=125 lines=63
   if &diff
     set columns=250
   endif
