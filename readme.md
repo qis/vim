@@ -75,7 +75,7 @@ sudo apt install clang-format-11 clang-tidy-11 clangd-11 lldb-11
 Configure alternatives.
 
 ```sh
-for i in clang{,++,d,-{cpp,format,tidy}} lld{,b} llvm-{config,ar,nm,ranlib}; do
+for i in clang{,++,d,-{cpp,format,tidy}} lld{,b} llvm-{config,ar,as,nm,ranlib}; do
   sudo update-alternatives --remove-all $i 2>/dev/null
   sudo update-alternatives --install /usr/bin/$i $i /usr/bin/$i-11 100
 done
