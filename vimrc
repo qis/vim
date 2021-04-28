@@ -288,6 +288,7 @@ let g:markdown_fenced_languages = [
   \"html",
   \"ini=dosini",
   \"json=json5",
+  \"json5=json5",
   \"make",
   \"makefile=make",
   \"manifest=xml",
