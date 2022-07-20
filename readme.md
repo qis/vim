@@ -89,6 +89,10 @@ curl -L https://github.com/qis/vim/releases/download/1.0.0/nvim-lib-windows.tar.
 tar xf nvim-lib.tar.gz -C %LocalAppData%\nvim
 ```
 
+Execute `C:\Ace\src\nvim.cmd` to add `nvim-qt.exe` to the Explorer context menu.
+
+Execute `C:\Ace\src\nvim.ps1` to associate file extensions with `nvim-qt.exe`.
+
 </details>
 
 ## Nvim Build
