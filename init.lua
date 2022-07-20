@@ -109,3 +109,11 @@ vim.cmd("packadd telescope-fzf-native")
 -- https://github.com/nvim-telescope/telescope.nvim
 vim.cmd("packadd telescope")
 require("plugins.telescope")
+
+-- https://github.com/mfussenegger/nvim-dap
+vim.cmd("packadd dap")
+require("plugins.dap")
+
+-- https://github.com/Shatur/neovim-cmake
+vim.cmd("packadd cmake")
+require("plugins.cmake")

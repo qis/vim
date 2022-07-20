@@ -49,3 +49,9 @@
 [submodule "pack/plugins/opt/telescope"]
 	path = pack/plugins/opt/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "pack/plugins/opt/dap"]
+	path = pack/plugins/opt/dap
+	url = https://github.com/mfussenegger/nvim-dap
+[submodule "pack/plugins/opt/cmake"]
+	path = pack/plugins/opt/cmake
+	url = https://github.com/Shatur/neovim-cmake

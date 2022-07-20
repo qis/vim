@@ -1,6 +1,10 @@
 local canonical = require("canonical")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+vim.g.lsp_cpp = vim.g.lsp_cpp or false
+vim.g.lsp_lua = vim.g.lsp_lua or false
+vim.g.lsp_tjs = vim.g.lsp_tjs or false
+
 local status = {}
 
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -25,6 +29,7 @@ local cpp = {
       end,
       capabilities = capabilities,
     })
+    vim.g.lsp_cpp = true
     table.insert(status, "CPP: " .. root .. " [" .. exec .. "]")
   end
 }
@@ -79,6 +84,7 @@ local lua = {
     if nvim then
       info = " (nvim)"
     end
+    vim.g.lsp_lua = true
     table.insert(status, "LUA: " .. root .. " [" .. exec .. "]" .. info)
   end
 }
@@ -97,6 +103,7 @@ local tjs = {
       end,
       capabilities = capabilities,
     })
+    vim.g.lsp_tjs = true
     table.insert(status, "TJS: " .. root .. " [" .. exec .. "]")
   end
 }
