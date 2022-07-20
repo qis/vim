@@ -29,9 +29,10 @@ local cpp = {
       end,
       capabilities = capabilities,
     })
+    status.cpp = root .. " [" .. exec .. "]"
     vim.g.lsp_cpp = true
-    table.insert(status, "CPP: " .. root .. " [" .. exec .. "]")
-  end
+  end,
+  root = nil,
 }
 
 local lua = {
@@ -84,9 +85,10 @@ local lua = {
     if nvim then
       info = " (nvim)"
     end
+    status.lua = root .. " [" .. exec .. "]" .. info
     vim.g.lsp_lua = true
-    table.insert(status, "LUA: " .. root .. " [" .. exec .. "]" .. info)
-  end
+  end,
+  root = nil,
 }
 
 local tjs = {
@@ -103,9 +105,10 @@ local tjs = {
       end,
       capabilities = capabilities,
     })
+    status.tjs = root .. " [" .. exec .. "]"
     vim.g.lsp_tjs = true
-    table.insert(status, "TJS: " .. root .. " [" .. exec .. "]")
-  end
+  end,
+  root = nil,
 }
 
 cpp.find = vim.loop.fs_stat(cpp.exec) ~= nil
@@ -119,35 +122,33 @@ if lua.find then
   if cwd:find(nvim, 1, true) == 1 then
     lua.init(lua.exec, nvim, true)
     lua.find = false
+    lua.root = cwd
   end
 end
 
 local cur = cwd
-local root = {}
 
 if cpp.find or lua.find or tjs.find then
-  --local log = assert(vim.loop.fs_open("lspconfig.log", "a", tonumber('644', 8)))
   repeat
-    --vim.loop.fs_write(log, cwd .. "\n", -1, nil)
     if cpp.find then
-      if vim.loop.fs_stat(cwd .. "/build/compile_commands.json") ~= nil then
-        table.insert(root, cwd)
+      if vim.loop.fs_stat(cwd .. "/CMakePresets.json") ~= nil then
         cpp.init(cpp.exec, cwd)
         cpp.find = false
+        cpp.root = cwd
       end
     end
     if lua.find then
       if vim.loop.fs_stat(cwd .. "/.luarc.json") ~= nil then
-        table.insert(root, cwd)
         lua.init(lua.exec, cwd, false)
         lua.find = false
+        lua.root = cwd
       end
     end
     if tjs.find then
       if vim.loop.fs_stat(cwd .. "/tsconfig.json") ~= nil then
-        table.insert(root, cwd)
         tjs.init(tjs.exec, cwd)
         tjs.find = false
+        lua.root = cwd
       end
     end
     cur = cwd
@@ -155,20 +156,30 @@ if cpp.find or lua.find or tjs.find then
   until string.len(cwd) >= string.len(cur) or not (cpp.find or lua.find or tjs.find)
 end
 
-local cd = nil
-for _, path in ipairs(root) do
-  if cd == nil or string.len(cd) > string.len(path) then
-    cd = path
-  end
-end
-if cd ~= nil then
-  vim.api.nvim_command("cd " .. cd)
+if cpp.root ~= nil then
+  vim.api.nvim_command("cd " .. cpp.root)
+elseif lua.root ~= nil then
+  vim.api.nvim_command("cd " .. lua.root)
+elseif tjs.root ~= nil then
+  vim.api.nvim_command("cd " .. tjs.root)
 end
 
-vim.api.nvim_create_user_command("LspStatus", function()
-  local report = ""
-  for _, s in ipairs(status) do
-    report = report .. "\n" .. s
+vim.api.nvim_create_user_command("LspReload", function()
+  if cpp.root ~= nil then
+    cpp.init(cpp.exec, cpp.root)
   end
-  print("LSP Status" .. report)
+end, {})
+
+vim.api.nvim_create_user_command("LspStatus", function()
+  local report = "LSP Status"
+  if status.cpp then
+    report = report .. "\nCPP: " .. status.cpp
+  end
+  if status.lua then
+    report = report .. "\nLUA: " .. status.lua
+  end
+  if status.tjs then
+    report = report .. "\nTJS: " .. status.tjs
+  end
+  print(report)
 end, {})

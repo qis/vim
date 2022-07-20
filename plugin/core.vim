@@ -112,7 +112,7 @@ set nomodeline
 
 " Match Trailing Whitespace
 function! MatchTrailingWhitespace() abort
-  if &ft !~ '^\(lspinfo\|Telescope.*\)$'
+  if &ft !~ '^\(lspinfo\|qf\|Telescope.*\)$'
     match Visual /\s\+$/
   else
     call clearmatches()

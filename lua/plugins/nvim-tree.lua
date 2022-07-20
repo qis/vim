@@ -1,10 +1,12 @@
 local nvim_tree = require("nvim-tree")
 local nvim_tree_core = require("nvim-tree.core")
 local nvim_tree_view = require("nvim-tree.view")
-local nvim_tree_actions_find_file = require("nvim-tree.actions.finders.find-file").fn
 local nvim_tree_renderer = require("nvim-tree.renderer")
 local bufferline_state = require("bufferline.state")
 local bufferline_buffers = require("bufferline.buffers")
+
+local nvim_tree_actions_refresh = require("nvim-tree.actions.reloaders.reloaders").reload_explorer
+local nvim_tree_actions_find_file = require("nvim-tree.actions.finders.find-file").fn
 
 local function close()
   local buffers = bufferline_buffers.get_components(bufferline_state)
@@ -46,6 +48,7 @@ local function tree(buffer)
   if stat ~= nil and stat.type == "file" then
     nvim_tree_actions_find_file(file)
   end
+  nvim_tree_actions_refresh()
 end
 
 vim.api.nvim_create_user_command("NvimTreeBuffer", function() tree(true) end, {})

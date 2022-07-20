@@ -112,7 +112,6 @@ require("plugins.telescope")
 
 -- https://github.com/mfussenegger/nvim-dap
 vim.cmd("packadd dap")
-require("plugins.dap")
 
 -- https://github.com/Shatur/neovim-cmake
 vim.cmd("packadd cmake")

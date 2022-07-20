@@ -119,3 +119,27 @@ keymap("n", "<Leader>gc", builtin .. "git_branches()<CR>", simple)
 -- Git: Show [G]it [S]tash items in current repository.
 -- Apply:       RETURN
 keymap("n", "<Leader>gs", builtin .. "git_stash()<CR>", simple)
+
+-- CMake --
+local cmake = "<CMD>lua require('cmake')."
+
+-- [C]Make: [I]nitialize build directory.
+keymap("n", "<Leader>ci", ":CMakeConfigure<CR>", simple)
+
+-- [C]Make: Select [C]onfig.
+keymap("n", "<Leader>cc", cmake .. "select_build_type()<CR>", simple)
+
+-- [C]Make: Select [T]arget.
+keymap("n", "<Leader>ct", cmake .. "select_target()<CR>", simple)
+
+-- [C]Make: [B]uild.
+keymap("n", "<Leader>cb", cmake .. "build()<CR>", simple)
+
+-- [C]Make: [D]ebug.
+keymap("n", "<Leader>cd", cmake .. "build_and_debug()<CR>", simple)
+
+-- [C]Make: [R]un.
+keymap("n", "<Leader>cr", cmake .. "build_and_run()<CR>", simple)
+
+-- [C]Make: [A]bort job.
+keymap("n", "<Leader>ca", cmake .. "cancel()<CR>", simple)
