@@ -42,6 +42,13 @@ git clone --recursive https://github.com/qis/vim ~/.config/nvim
 # Install fzf and treesitter binaries.
 curl -L https://github.com/qis/vim/releases/download/1.0.0/nvim-lib-linux.tar.gz -o nvim-lib.tar.gz
 tar xf nvim-lib.tar.gz -C ~/.config/nvim
+
+# Register nvim.
+sudo tee /etc/profile.d/nvim.sh >/dev/null <<'EOF'
+export PATH="/opt/ace/dev/bin:${PATH}"
+EOF
+sudo chmod 0755 /etc/profile.d/nvim.sh
+. /etc/profile.d/nvim.sh
 ```
 
 </details>
