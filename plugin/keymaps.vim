@@ -74,9 +74,9 @@ vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
 " Toogle comment on line/selection with "LEADER \".
-nnoremap <silent> <Leader>\ <Plug>CommentaryLine
-vnoremap <silent> <Leader>\ <Plug>Commentary
-xnoremap <silent> <Leader>\ <Plug>Commentary
+nnoremap <silent> <Leader>\ :Commentary<CR>
+vnoremap <silent> <Leader>\ :Commentary<CR>
+xnoremap <silent> <Leader>\ :Commentary<CR>
 
 " Move to first character or line start with "Home".
 inoremap <silent> <Home> <C-o>:call CoreHome()<CR>
