@@ -1,0 +1,54 @@
+[submodule "pack/plugins/opt/plenary"]
+	path = pack/plugins/opt/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "pack/plugins/opt/bufdel"]
+	path = pack/plugins/opt/bufdel
+	url = https://github.com/ojroques/nvim-bufdel
+[submodule "pack/plugins/opt/nvim-web-devicons"]
+	path = pack/plugins/opt/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "pack/plugins/opt/bufferline"]
+	path = pack/plugins/opt/bufferline
+	url = https://github.com/akinsho/bufferline.nvim
+[submodule "pack/plugins/opt/trouble"]
+	path = pack/plugins/opt/trouble
+	url = https://github.com/folke/trouble.nvim
+[submodule "pack/plugins/opt/gitsigns"]
+	path = pack/plugins/opt/gitsigns
+	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/plugins/opt/popup"]
+	path = pack/plugins/opt/popup
+	url = https://github.com/nvim-lua/popup.nvim
+[submodule "pack/plugins/opt/luasnip"]
+	path = pack/plugins/opt/luasnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "pack/plugins/opt/cmp_nvim_lsp"]
+	path = pack/plugins/opt/cmp_nvim_lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "pack/plugins/opt/cmp_nvim_lsp_signature_help"]
+	path = pack/plugins/opt/cmp_nvim_lsp_signature_help
+	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+[submodule "pack/plugins/opt/cmp"]
+	path = pack/plugins/opt/cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/plugins/opt/lspconfig"]
+	path = pack/plugins/opt/lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "pack/plugins/opt/nvim-tree"]
+	path = pack/plugins/opt/nvim-tree
+	url = https://github.com/kyazdani42/nvim-tree.lua
+[submodule "pack/plugins/opt/nvim-treesitter"]
+	path = pack/plugins/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/plugins/opt/clang-format"]
+	path = pack/plugins/opt/clang-format
+	url = https://github.com/rhysd/vim-clang-format
+[submodule "pack/plugins/opt/telescope-fzf-native"]
+	path = pack/plugins/opt/telescope-fzf-native
+	url = https://github.com/nvim-telescope/telescope-fzf-native.nvim
+[submodule "pack/plugins/opt/telescope"]
+	path = pack/plugins/opt/telescope
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "pack/plugins/opt/nginx"]
+	path = pack/plugins/opt/nginx
+	url = https://github.com/chr4/nginx.vim
