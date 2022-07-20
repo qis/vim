@@ -1,7 +1,6 @@
 " Options
 set nobackup
 set conceallevel=0
-set expandtab
 set fileencoding=utf-8
 set hlsearch
 set ignorecase
@@ -12,21 +11,30 @@ set number
 set numberwidth=4
 set pumheight=10
 set scrolloff=1
-set shiftwidth=2
 set showmode
 set showtabline=1
 set smartcase
 set smartindent
-set smarttab
 set splitbelow
 set splitright
 set noswapfile
-set tabstop=2
 set termguicolors
 set timeoutlen=1000
 set undofile
 set updatetime=100
 set nowritebackup
+
+" Tabs
+set expandtab
+set shiftwidth=2
+set smarttab
+set softtabstop=2
+set tabstop=8
+
+" Special Characters
+set fillchars+=stl:\ ,stlnc:\ ,
+set listchars=tab:»·,extends:»,precedes:«,nbsp:␣
+set list
 
 " Compatibility
 scriptencoding utf-8

@@ -98,6 +98,13 @@ nnoremap <silent> <Leader>w :w<CR>
 " Git: Show [G]it [B]lame.
 nnoremap <silent> <Leader>gb :Git blame<CR>
 
+" Show color syntax under cursor.
+nnoremap <Leader>. :echo
+  \ 'hi[' . synIDattr(synID(line('.'),col('.'),1),'name') . '] ' .
+  \ 'tr[' . synIDattr(synID(line('.'),col('.'),0),'name') . '] ' .
+  \ 'lo[' . synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name') . ']'<CR>
+
+" Compatibility
 if !has('nvim')
   " Close buffer or tab with "LEADER Q".
   nnoremap <Leader>q :q<CR>
