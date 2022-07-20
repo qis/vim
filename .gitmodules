@@ -52,6 +52,3 @@
 [submodule "pack/plugins/opt/dap"]
 	path = pack/plugins/opt/dap
 	url = https://github.com/mfussenegger/nvim-dap
-[submodule "pack/plugins/opt/cmake"]
-	path = pack/plugins/opt/cmake
-	url = https://github.com/Shatur/neovim-cmake
