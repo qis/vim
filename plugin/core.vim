@@ -110,12 +110,17 @@ set laststatus=2
 " Mode Line
 set nomodeline
 
-" Extra Whitespace
-match Visual /\s\+$/
-autocmd BufWinEnter * match Visual /\s\+$/
-autocmd InsertEnter * match Visual /\s\+\%#\@<!$/
-autocmd InsertLeave * match Visual /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" Match Trailing Whitespace
+function! MatchTrailingWhitespace() abort
+  if &ft !~ '^\(lspinfo\|Telescope.*\)$'
+    match Visual /\s\+$/
+  else
+    call clearmatches()
+  endif
+endfunction
+
+autocmd InsertEnter * call clearmatches()
+autocmd InsertLeave,BufEnter,Filetype * call MatchTrailingWhitespace()
 
 " Home
 function CoreHome()
