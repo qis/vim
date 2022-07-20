@@ -179,6 +179,13 @@ nvim
 
 </details>
 
+<!--
+## Plugins
+* <https://github.com/tpope/vim-commentary> (v1.3, patched)
+* <https://github.com/tpope/vim-fugitive> (v3.7)
+* <https://github.com/chr4/nginx.vim> (HEAD)
+-->
+
 ## TAB
 Use [uncap](https://github.com/susam/uncap) to remap `TAB` to `ESC` on Windows.
 

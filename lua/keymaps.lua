@@ -1,4 +1,4 @@
--- See plugins/keymaps.vim for base keymaps.
+-- See keymaps.vim for base keymaps.
 --
 -- n - NORMAL
 -- i - INSERT
@@ -7,6 +7,10 @@
 -- c - COMMAND
 -- t - TERMINAL
 --
+
+local canonical = require("canonical")
+local nvim = vim.fn.resolve(vim.api.nvim_call_function("stdpath", { "config" }))
+vim.cmd("source " .. canonical(nvim) .. "/lua/keymaps.vim")
 
 local keymap = vim.api.nvim_set_keymap
 local simple = { noremap = true, silent = true }

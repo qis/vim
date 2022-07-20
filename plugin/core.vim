@@ -135,6 +135,13 @@ autocmd BufRead,BufNewFile *.json :silent! set filetype=jsonc
 " File Type Settings
 autocmd FileType make,changelog :silent! set noexpandtab
 
+" Commentary
+autocmd FileType c,cpp,javascript,json,jsonc,typescript set commentstring=//%s
+autocmd FileType asm,ini set commentstring=;%s
+autocmd FileType cmake,yaml set commentstring=#%s
+autocmd FileType lua set commentstring=--%s
+autocmd FileType vim set commentstring=\"%s
+
 " Clang-Format
 let g:clang_format#command = expand("$ACE/bin/clang-format")
 let g:clang_format#enable_fallback_style = 0

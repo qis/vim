@@ -91,10 +91,4 @@ nnoremap <silent> <Plug>ChangeCommentary c:<C-U>call <SID>textobject(1)<CR>
 nmap <silent> <Plug>CommentaryUndo <Plug>Commentary<Plug>Commentary
 command! -range -bar Commentary call s:go(<line1>,<line2>)
 
-autocmd FileType c,cpp,javascript,json,jsonc,typescript setlocal commentstring=//%s
-autocmd FileType asm,ini setlocal commentstring=;%s
-autocmd FileType cmake,yaml setlocal commentstring=#%s
-autocmd FileType lua setlocal commentstring=--%s
-autocmd FileType vim setlocal commentstring=\"%s
-
 " vim:set et sw=2:

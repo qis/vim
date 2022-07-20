@@ -1,16 +1,10 @@
-local status = {}
-
+local canonical = require("canonical")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+local status = {}
 
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.update_capabilities(client_capabilities)
-
-local function canonical(path)
-  if path == nil then
-    return ""
-  end
-  return string.gsub(path, '[\\]', { ['\\'] = '/' })
-end
 
 local cpp = {
   exec = canonical(vim.fn.exepath(canonical(os.getenv("ACE")) .. "/bin/clangd")),

@@ -1,13 +1,4 @@
-" Keymaps
-if exists('g:loaded_keymaps')
-    finish
-endif
-
-let g:loaded_keymaps = 1
-let s:save_cpo = &cpo
-set cpo&vim
-
-" See lua/keymaps.lua for nvim keymaps.
+" See keymaps.lua for nvim keymaps.
 "
 " n - NORMAL
 " i - INSERT
@@ -16,6 +7,15 @@ set cpo&vim
 " c - COMMAND
 " t - TERMINAL
 "
+
+" Keymaps
+if exists('g:loaded_keymaps')
+    finish
+endif
+
+let g:loaded_keymaps = 1
+let s:save_cpo = &cpo
+set cpo&vim
 
 " Settings
 set backspace=indent,eol,start
@@ -70,8 +70,8 @@ inoremap <silent> <C-Down> <C-o>][
 nnoremap <silent> <C-Down> ][
 
 " Change indentation of selection with "<" and ">".
-vnoremap <silent> < <gv<CR>
-vnoremap <silent> > >gv<CR>
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
 
 " Toogle comment on line/selection with "LEADER \".
 nnoremap <silent> <Leader>\ <Plug>CommentaryLine
