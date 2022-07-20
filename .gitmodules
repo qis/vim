@@ -49,6 +49,3 @@
 [submodule "pack/plugins/opt/telescope"]
 	path = pack/plugins/opt/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim
-[submodule "pack/plugins/opt/nginx"]
-	path = pack/plugins/opt/nginx
-	url = https://github.com/chr4/nginx.vim

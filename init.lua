@@ -100,6 +100,3 @@ vim.cmd("packadd telescope-fzf-native")
 -- https://github.com/nvim-telescope/telescope.nvim
 vim.cmd("packadd telescope")
 require("plugins.telescope")
-
--- https://github.com/chr4/nginx.vim
-vim.cmd("packadd nginx")
