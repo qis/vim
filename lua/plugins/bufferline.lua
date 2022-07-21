@@ -13,7 +13,6 @@ local function close(force)
           break
         end
       end
-      vim.api.nvim_buf_delete(i, { force = true })
       return
     end
   end
