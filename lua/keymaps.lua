@@ -147,8 +147,8 @@ local dap = "<CMD>lua require('dap')."
 -- Debug: Toggle [B]reakpoint.
 keymap("n", "<Leader>b", dap .. "toggle_breakpoint()<CR>", simple)
 
--- Debug: [R]un.
-keymap("n", "<Leader>r", dap .. "continue()<CR>", simple)
+-- Debug: Continue with "F8".
+keymap("n", "<F8>", dap .. "continue()<CR>", simple)
 
 -- Debug: Step out, over, in with "F9", "F10", "F11".
 keymap("n", "<F9>", dap .. "step_out()<CR>", simple)

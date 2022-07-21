@@ -92,6 +92,9 @@ nnoremap <silent> <A-Down> :m .+1<CR>==
 vnoremap <silent> <A-Down> :m .+1<CR>==
 xnoremap <silent> <A-Down> :move '>+1<CR>gv-gv
 
+" Cycle between windows with "TAB".
+nnoremap <silent> <Tab> <C-w>w
+
 " Write buffer or tab with "LEADER W".
 nnoremap <silent> <Leader>w :w<CR>
 
