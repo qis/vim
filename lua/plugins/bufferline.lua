@@ -34,6 +34,11 @@ bufferline.setup({
     show_close_icon = false,
     show_buffer_close_icons = false,
     separator_style = "thin",
+    custom_filter = function(i, _)
+      if vim.bo[i].filetype ~= "qf" and vim.fn.bufname(i) ~= "[dap-repl]" then
+        return true
+      end
+    end
   },
   highlights = {
     fill = { guibg = background },
