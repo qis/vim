@@ -11,8 +11,13 @@
 local keymap = vim.api.nvim_set_keymap
 local simple = { noremap = true, silent = true }
 
+-- https://github.com/nvim-telescope/telescope.nvim#pickers
 local builtin = "<CMD>lua require('telescope.builtin')."
+
+-- https://github.com/Shatur/neovim-cmake#commands
 local cmake = "<CMD>lua require('cmake')."
+
+-- https://github.com/mfussenegger/nvim-dap/blob/master/doc/dap.txt
 local dap = "<CMD>lua require('dap')."
 
 -- Open file explorer in new buffer.
