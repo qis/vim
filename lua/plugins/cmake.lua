@@ -3,6 +3,8 @@ if vim.g.lsp_cpp then
   local cmake = require("cmake")
   local path = require('plenary.path')
 
+  vim.fn.sign_define('DapBreakpoint', { text = '⬤', texthl = '', linehl = '', numhl = '' })
+
   local executable = path:new(os.getenv("ACE")) / "bin" / "lldb-vscode"
 
   dap.adapters.lldb = {
