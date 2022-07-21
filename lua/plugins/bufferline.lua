@@ -4,6 +4,23 @@ local bufferline_buffers = require("bufferline.buffers")
 local bufdel = require('bufdel')
 
 local function close(force)
+  -- Close windows with dap and cmake buffers.
+  local closed = false
+  for _, i in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.bo[i].filetype == "qf" or vim.fn.bufname(i) == "[dap-repl]" then
+      for _, w in ipairs(vim.api.nvim_list_wins()) do
+        if vim.api.nvim_win_get_buf(w) == i then
+          vim.api.nvim_win_close(w, true)
+          closed = true
+          break
+        end
+      end
+    end
+  end
+  if closed then
+    return
+  end
+
   -- Find and delete current buffer if it is not listed shown the buffer line.
   local buffers = bufferline_buffers.get_components(bufferline_state)
   for _, name in ipairs(buffers) do
