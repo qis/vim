@@ -147,6 +147,15 @@ local dap = "<CMD>lua require('dap')."
 -- Debug: Toggle [B]reakpoint.
 keymap("n", "<Leader>b", dap .. "toggle_breakpoint()<CR>", simple)
 
+-- Debug: Show current scopes with "LEADER-D-S".
+keymap("n", "<Leader>ds", dap .. "CMakeShowScopes()<CR>", simple)
+
+-- Debug: Show current frames with "LEADER-D-F".
+keymap("n", "<Leader>df", dap .. "CMakeShowFrames()<CR>", simple)
+
+-- Debug: Show value for expression under cursor with "LEADER-D-V".
+keymap("n", "<Leader>dv", dap .. "CMakeShowValue()<CR>", simple)
+
 -- Debug: Continue with "F8".
 keymap("n", "<F8>", dap .. "continue()<CR>", simple)
 
