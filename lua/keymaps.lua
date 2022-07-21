@@ -155,5 +155,5 @@ keymap("n", "<F9>", dap .. "step_out()<CR>", simple)
 keymap("n", "<F10>", dap .. "step_over()<CR>", simple)
 keymap("n", "<F11>", dap .. "step_into()<CR>", simple)
 
--- Debug: Open repl.
+-- Debug: Look up symbol under cursor with "F12".
 keymap("n", "<F12>", dap .. "repl.open()<CR>", simple)
