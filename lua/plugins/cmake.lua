@@ -47,5 +47,6 @@ vim.api.nvim_create_user_command("CMakeShowFrames", function()
 end, {})
 
 vim.api.nvim_create_user_command("CMakeShowValue", function()
-  require("dap.ui.widgets").hover()
+  local widgets = require("dap.ui.widgets")
+  widgets.centered_float(widgets.expression)
 end, {})
