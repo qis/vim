@@ -154,7 +154,7 @@ keymap("n", "<Leader>ds", ":CMakeShowScopes<CR>", simple)
 keymap("n", "<Leader>df", ":CMakeShowFrames<CR>", simple)
 
 -- Debug: Show threads with "LEADER-D-T".
-keymap("n", "<Leader>df", ":CMakeShowThreads<CR>", simple)
+keymap("n", "<Leader>dt", ":CMakeShowThreads<CR>", simple)
 
 -- Debug: Show value under cursor with "LEADER-D-V".
 keymap("n", "<Leader>dv", ":CMakeShowValue<CR>", simple)
