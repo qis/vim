@@ -132,20 +132,28 @@ keymap("n", "<Leader>ct", cmake .. "select_target()<CR>", simple)
 -- [C]Make: Set target [A]rguments.
 keymap("n", "<Leader>ca", cmake .. "set_target_arguments()<CR>", simple)
 
--- [C]Make: [B]uild all.
-keymap("n", "<Leader>cb", cmake .. "build_all()<CR>", simple)
+-- [C]Make: Build and debug with "F5".
+keymap("n", "<F5>", cmake .. "build_and_debug()<CR>", simple)
 
--- [C]Make: Build and [D]ebug.
-keymap("n", "<Leader>cd", cmake .. "build_and_debug()<CR>", simple)
+-- [C]Make: Build and run with "F6".
+keymap("n", "<F6>", cmake .. "build_and_run()<CR>", simple)
 
--- [C]Make: Build and [R]un.
-keymap("n", "<Leader>cr", cmake .. "build_and_run()<CR>", simple)
+-- [C]Make: build all with "F7".
+keymap("n", "<F7>", cmake .. "build_all()<CR>", simple)
 
 -- Debug --
 local dap = "<CMD>lua require('dap')."
 
 -- Debug: Toggle [B]reakpoint.
-keymap("n", "b", dap .. "continue()<CR>", simple)
-keymap("n", "B", dap .. "toggle_breakpoint()<CR>", simple)
-keymap("n", "m", dap .. "step_over()<CR>", simple)
-keymap("n", "M", dap .. "step_into()<CR>", simple)
+keymap("n", "<Leader>b", dap .. "toggle_breakpoint()<CR>", simple)
+
+-- Debug: [R]un.
+keymap("n", "<Leader>r", dap .. "continue()<CR>", simple)
+
+-- Debug: Step out, over, in with "F9", "F10", "F11".
+keymap("n", "<F9>", dap .. "step_out()<CR>", simple)
+keymap("n", "<F10>", dap .. "step_over()<CR>", simple)
+keymap("n", "<F11>", dap .. "step_into()<CR>", simple)
+
+-- Debug: Open repl.
+keymap("n", "<F12>", dap .. "repl.open()<CR>", simple)
