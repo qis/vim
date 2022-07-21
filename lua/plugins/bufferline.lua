@@ -4,6 +4,20 @@ local bufferline_buffers = require("bufferline.buffers")
 local bufdel = require('bufdel')
 
 local function close(force)
+  -- Close debug info.
+  for _, i in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.fn.bufname(i) == "[dap-float]" then
+      for _, w in ipairs(vim.api.nvim_list_wins()) do
+        if vim.api.nvim_win_get_buf(w) == i then
+          vim.api.nvim_win_close(w, true)
+          break
+        end
+      end
+      vim.api.nvim_buf_delete(i, { force = true })
+      return
+    end
+  end
+
   -- Close windows with dap and cmake buffers.
   local closed = false
   for _, i in ipairs(vim.api.nvim_list_bufs()) do
