@@ -143,3 +143,6 @@ keymap("n", "<Leader>cr", cmake .. "build_and_run()<CR>", simple)
 
 -- [C]Make: [A]bort job.
 keymap("n", "<Leader>ca", cmake .. "cancel()<CR>", simple)
+
+-- Test
+keymap("n", "<Leader>cs", "<CMD>lua require'dap'.continue()<CR>", simple)

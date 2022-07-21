@@ -1,5 +1,5 @@
-local canonical = require("canonical")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local path = require('plenary.path')
 
 vim.g.lsp_cpp = vim.g.lsp_cpp or false
 vim.g.lsp_lua = vim.g.lsp_lua or false
@@ -11,7 +11,7 @@ local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.update_capabilities(client_capabilities)
 
 local cpp = {
-  exec = canonical(vim.fn.exepath(canonical(os.getenv("ACE")) .. "/bin/clangd")),
+  exec = vim.fn.exepath((path:new(os.getenv("ACE")) / "bin" / "clangd").filename),
   init = function(exec, root)
     require("lspconfig").clangd.setup({
       filetypes = { "c", "cpp" },
@@ -36,7 +36,7 @@ local cpp = {
 }
 
 local lua = {
-  exec = canonical(vim.fn.exepath("lua-language-server")),
+  exec = vim.fn.exepath("lua-language-server"),
   init = function(exec, root, nvim)
     local diagnostics = {}
     local workspace = {}
@@ -92,7 +92,7 @@ local lua = {
 }
 
 local tjs = {
-  exec = canonical(vim.fn.exepath("typescript-language-server")),
+  exec = vim.fn.exepath("typescript-language-server"),
   init = function(exec, root)
     require("lspconfig").tsserver.setup({
       filetypes = {
@@ -115,14 +115,14 @@ cpp.find = vim.loop.fs_stat(cpp.exec) ~= nil
 lua.find = vim.loop.fs_stat(lua.exec) ~= nil
 tjs.find = vim.loop.fs_stat(tjs.exec) ~= nil
 
-local cwd = canonical(vim.fn.resolve(vim.loop.cwd()))
+local cwd = path:new(vim.fn.resolve(vim.loop.cwd()))
 
 if lua.find then
-  local nvim = canonical(vim.fn.resolve(vim.api.nvim_call_function("stdpath", { "config" })))
-  if cwd:find(nvim, 1, true) == 1 then
+  local nvim = vim.fn.resolve(vim.api.nvim_call_function("stdpath", { "config" }))
+  if cwd.filename:find(nvim, 1, true) == 1 then
     lua.init(lua.exec, nvim, true)
+    lua.root = nvim
     lua.find = false
-    lua.root = cwd
   end
 end
 
@@ -133,27 +133,27 @@ if cpp.find or lua.find or tjs.find then
     if cpp.find then
       if vim.loop.fs_stat(cwd .. "/CMakePresets.json") ~= nil then
         cpp.init(cpp.exec, cwd)
+        cpp.root = cwd:absolute()
         cpp.find = false
-        cpp.root = cwd
       end
     end
     if lua.find then
       if vim.loop.fs_stat(cwd .. "/.luarc.json") ~= nil then
         lua.init(lua.exec, cwd, false)
+        lua.root = cwd:absolute()
         lua.find = false
-        lua.root = cwd
       end
     end
     if tjs.find then
       if vim.loop.fs_stat(cwd .. "/tsconfig.json") ~= nil then
         tjs.init(tjs.exec, cwd)
+        lua.root = cwd:absolute()
         tjs.find = false
-        lua.root = cwd
       end
     end
     cur = cwd
-    cwd = canonical(vim.fn.resolve(cwd .. "/.."))
-  until string.len(cwd) >= string.len(cur) or not (cpp.find or lua.find or tjs.find)
+    cwd = cur:parent()
+  until string.len(cwd.filename) >= string.len(cur.filename) or not (cpp.find or lua.find or tjs.find)
 end
 
 if cpp.root ~= nil then
