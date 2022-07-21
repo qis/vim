@@ -31,11 +31,4 @@ if vim.g.lsp_cpp then
   })
 end
 
-vim.api.nvim_create_user_command("CMakeConfigure", function()
-  local configure = require("cmake").configure()
-  if configure ~= nil then
-    configure:after_success(vim.schedule_wrap(function()
-      vim.cmd("LspReload")
-    end))
-  end
-end, {})
+vim.cmd("cnoreabbrev cmake CMake")

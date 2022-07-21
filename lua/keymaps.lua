@@ -123,26 +123,29 @@ keymap("n", "<Leader>gs", builtin .. "git_stash()<CR>", simple)
 -- CMake --
 local cmake = "<CMD>lua require('cmake')."
 
--- [C]Make: [I]nitialize build directory.
-keymap("n", "<Leader>ci", ":CMakeConfigure<CR>", simple)
-
 -- [C]Make: Select [C]onfig.
-keymap("n", "<Leader>cc", cmake .. "select_build_type()<CR>", simple)
+keymap("n", "<Leader>cc", cmake .. "select_config()<CR>", simple)
 
 -- [C]Make: Select [T]arget.
 keymap("n", "<Leader>ct", cmake .. "select_target()<CR>", simple)
 
--- [C]Make: [B]uild.
-keymap("n", "<Leader>cb", cmake .. "build()<CR>", simple)
+-- [C]Make: Set target [A]rguments.
+keymap("n", "<Leader>ca", cmake .. "set_target_arguments()<CR>", simple)
 
--- [C]Make: [D]ebug.
+-- [C]Make: [B]uild all.
+keymap("n", "<Leader>cb", cmake .. "build_all()<CR>", simple)
+
+-- [C]Make: Build and [D]ebug.
 keymap("n", "<Leader>cd", cmake .. "build_and_debug()<CR>", simple)
 
--- [C]Make: [R]un.
+-- [C]Make: Build and [R]un.
 keymap("n", "<Leader>cr", cmake .. "build_and_run()<CR>", simple)
 
--- [C]Make: [A]bort job.
-keymap("n", "<Leader>ca", cmake .. "cancel()<CR>", simple)
+-- Debug --
+local dap = "<CMD>lua require('dap')."
 
--- Test
-keymap("n", "<Leader>cs", "<CMD>lua require'dap'.continue()<CR>", simple)
+-- Debug: Toggle [B]reakpoint.
+keymap("n", "b", dap .. "continue()<CR>", simple)
+keymap("n", "B", dap .. "toggle_breakpoint()<CR>", simple)
+keymap("n", "m", dap .. "step_over()<CR>", simple)
+keymap("n", "M", dap .. "step_into()<CR>", simple)
