@@ -46,6 +46,11 @@ vim.api.nvim_create_user_command("CMakeShowFrames", function()
   widgets.centered_float(widgets.frames)
 end, {})
 
+vim.api.nvim_create_user_command("CMakeShowThreads", function()
+  local widgets = require("dap.ui.widgets")
+  widgets.centered_float(widgets.threads)
+end, {})
+
 vim.api.nvim_create_user_command("CMakeShowValue", function()
   local widgets = require("dap.ui.widgets")
   widgets.centered_float(widgets.expression)
