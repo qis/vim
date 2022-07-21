@@ -33,8 +33,6 @@ if vim.g.lsp_cpp then
   })
 end
 
-vim.cmd("cnoreabbrev cmake CMake")
-
 vim.api.nvim_create_user_command("CMakeShowScopes", function()
   local widgets = require("dap.ui.widgets")
   widgets.centered_float(widgets.scopes)
