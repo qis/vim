@@ -150,7 +150,7 @@ keymap("n", "<F10>", dap .. "step_over()<CR>", simple)
 keymap("n", "<F11>", dap .. "step_into()<CR>", simple)
 
 -- Debugger: Show output window.
-keymap("n", "<F12>", dap .. "repl.open()<CR>", simple)
+keymap("n", "<F12>", dap .. "repl.open({ height = 16 })<CR>", simple)
 
 -- Run clang-format on file or selection.
 keymap("n", "<Leader>cf", ":ClangFormat<CR>", simple)
