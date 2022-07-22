@@ -70,11 +70,13 @@ inoremap <silent> <Home> <C-o>:call CoreHome()<CR>
 nnoremap <silent> <Home> :call CoreHome()<CR>
 
 " Move line or selected lines up.
+inoremap <silent> <A-Up> <C-o>:m .-2<CR>
 nnoremap <silent> <A-Up> :m .-2<CR>==
 vnoremap <silent> <A-Up> :m .-2<CR>==
 xnoremap <silent> <A-Up> :move '<-2<CR>gv-gv
 
 " Move line or selected lines down.
+inoremap <silent> <A-Down> <C-o>:m .+1<CR>
 nnoremap <silent> <A-Down> :m .+1<CR>==
 vnoremap <silent> <A-Down> :m .+1<CR>==
 xnoremap <silent> <A-Down> :move '>+1<CR>gv-gv

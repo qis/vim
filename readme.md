@@ -23,8 +23,8 @@ sudo git clone https://github.com/qis/vim /etc/vim
 [IN   ] CTRL + UP         # Move to the beginning of a function.
 [IN   ] CTRL + DOWN       # Move to the end of a function.
 [IN   ] HOME              # Go to the first character or beginning of the line.
-[ NVX ] ALT + UP          # Move line or selected lines up.
-[ NVX ] ALT + DOWN        # Move line or selected lines down.
+[INVX ] ALT + UP          # Move line or selected lines up.
+[INVX ] ALT + DOWN        # Move line or selected lines down.
 [ N   ] TAB               # Focus next window.
 
 # Buffers
