@@ -25,14 +25,16 @@ if vim.g.lsp_cpp then
     configure_args = { "--preset", "default" },
     quickfix = {
       pos = "botright",
-      height = 10,
+      height = 16,
       only_on_error = false,
     },
     dap_configuration = {
       type = "lldb",
       request = "launch",
     },
-    dap_open_command = dap.repl.open,
+    dap_open_command = function()
+      return dap.repl.open({ height = 16 })
+    end,
     copy_compile_commands = false,
   })
 end
@@ -40,7 +42,6 @@ end
 vim.api.nvim_create_user_command("CMakeShowScopes", function()
   local widgets = require("dap.ui.widgets")
   widgets.centered_float(widgets.scopes)
-
 end, {})
 
 vim.api.nvim_create_user_command("CMakeShowFrames", function()
