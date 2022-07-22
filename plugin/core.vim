@@ -135,13 +135,13 @@ endfunction
 autocmd BufEnter * :silent! syntax sync fromstart
 
 " File Type
-autocmd BufRead,BufNewFile *.json :silent! set filetype=jsonc
+autocmd BufRead,BufNewFile *.json :silent! set filetype=json5
 
 " File Type Settings
 autocmd FileType make,changelog :silent! set noexpandtab
 
 " Commentary
-autocmd FileType c,cpp,javascript,json,jsonc,typescript set commentstring=//%s
+autocmd FileType c,cpp,javascript,json,json5,jsonc,typescript set commentstring=//%s
 autocmd FileType asm,ini set commentstring=;%s
 autocmd FileType cmake,yaml set commentstring=#%s
 autocmd FileType lua set commentstring=--%s
@@ -172,8 +172,7 @@ let g:markdown_fenced_languages = [
   \ 'fstab',
   \ 'html',
   \ 'ini=dosini',
-  \ 'json=jsonc',
-  \ 'json5=jsonc',
+  \ 'json=json5',
   \ 'make',
   \ 'makefile=make',
   \ 'manifest=xml',
