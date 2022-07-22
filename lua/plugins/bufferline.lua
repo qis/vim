@@ -4,9 +4,9 @@ local bufferline_buffers = require("bufferline.buffers")
 local bufdel = require('bufdel')
 
 local function close(force)
-  -- Close debug info.
+  -- Close top telescrope or debug info window.
   for _, i in ipairs(vim.api.nvim_list_bufs()) do
-    if vim.bo[i].filetype == "dap-float" then
+    if vim.bo[i].filetype == "TelescopePrompt" or vim.bo[i].filetype == "dap-float" then
       for _, w in ipairs(vim.api.nvim_list_wins()) do
         if vim.api.nvim_win_get_buf(w) == i then
           vim.api.nvim_win_close(w, true)

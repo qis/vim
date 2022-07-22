@@ -5,8 +5,8 @@ telescope.setup({
     layout_strategy = "vertical",
     layout_config = {
       vertical = {
-        width = 0.99,
-        height = 0.99,
+        width = function(_, cx) return cx end,
+        height = function(_, cy) return cy end,
       },
     },
     sorting_strategy = "ascending",
