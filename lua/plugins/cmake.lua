@@ -5,7 +5,10 @@ if vim.g.lsp_cpp then
 
   vim.fn.sign_define('DapBreakpoint', { text = '⬤', texthl = '', linehl = '', numhl = '' })
 
-  local executable = path:new(os.getenv("ACE")) / "bin" / "lldb-vscode"
+  local executable = vim.fn.exepath((path:new(os.getenv("ACE")) / "bin" / "lldb-vscode").filename)
+  if vim.loop.fs_stat(executable) == nil then
+    executable = vim.fn.exepath("lldb-vscode")
+  end
 
   dap.adapters.lldb = {
     name = "lldb",
