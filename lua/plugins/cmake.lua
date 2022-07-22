@@ -13,7 +13,7 @@ if vim.g.lsp_cpp then
   dap.adapters.lldb = {
     name = "lldb",
     type = "executable",
-    command = executable:absolute(),
+    command = executable,
   }
 
   cmake.setup({
