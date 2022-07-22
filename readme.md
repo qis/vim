@@ -25,6 +25,10 @@ sudo git clone https://github.com/qis/vim /etc/vim
 [IN   ] HOME              # Go to the first character or beginning of the line.
 [INVX ] ALT + UP          # Move line or selected lines up.
 [INVX ] ALT + DOWN        # Move line or selected lines down.
+[INVX ] SHIFT + UP        # Move screen one line up.
+[INVX ] SHIFT + DOWN      # Move screen one line down.
+[INVX ] SHIFT + PG UP     # Move screen 1/2 page up.
+[INVX ] SHIFT + PG DOWN   # Move screen 1/2 page down.
 [ N   ] TAB               # Focus next window.
 
 # Buffers

@@ -81,6 +81,30 @@ nnoremap <silent> <A-Down> :m .+1<CR>==
 vnoremap <silent> <A-Down> :m .+1<CR>==
 xnoremap <silent> <A-Down> :move '>+1<CR>gv-gv
 
+" Move screen one line up.
+inoremap <silent> <S-Up> <C-o><C-y>
+nnoremap <silent> <S-Up> <C-y>
+vnoremap <silent> <S-Up> <C-y>
+xnoremap <silent> <S-Up> <C-y>
+
+" Move screen one line down.
+inoremap <silent> <S-Down> <C-o><C-e>
+nnoremap <silent> <S-Down> <C-e>
+vnoremap <silent> <S-Down> <C-e>
+xnoremap <silent> <S-Down> <C-e>
+
+" Move screen 1/2 page up.
+inoremap <silent> <S-PageUp> <C-o><C-u>
+nnoremap <silent> <S-PageUp> <C-u>
+vnoremap <silent> <S-PageUp> <C-u>
+xnoremap <silent> <S-PageUp> <C-u>
+
+" Move screen 1/2 page down.
+inoremap <silent> <S-PageDown> <C-o><C-d>
+nnoremap <silent> <S-PageDown> <C-d>
+vnoremap <silent> <S-PageDown> <C-d>
+xnoremap <silent> <S-PageDown> <C-d>
+
 " Focus next window.
 nnoremap <silent> <Tab> <C-w>w
 
