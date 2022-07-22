@@ -21,7 +21,6 @@ set cpo&vim
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set iskeyword+=-
-set pastetoggle=<C-p>
 set nopaste
 
 let mapleader = '\'
@@ -29,21 +28,33 @@ let maplocalleader = '\'
 
 " Copy character or selection to clipboard.
 nnoremap <silent> c vy
-nnoremap <silent> <C-c> vy
 vnoremap <silent> c y
+xnoremap <silent> c y
+
+nnoremap <silent> <C-c> vy
 vnoremap <silent> <C-c> y
+xnoremap <silent> <C-c> y
 
 " Paste from clipboard.
-inoremap <silent> <Insert> <C-p><C-r>+<C-p>
-inoremap <silent> <S-Insert> <C-p><C-r>+<C-p>
-nnoremap <silent> <Insert> p
+set pastetoggle=<C-=>
+
+inoremap <silent> <C-p> <C-=><C-r>+<C-=>
+nnoremap <silent> <C-p> p
+vnoremap <silent> <C-p> p
+xnoremap <silent> <C-p> p
+cnoremap <C-p> <C-r>+
+
+inoremap <silent> <S-Insert> <C-=><C-r>+<C-=>
 nnoremap <silent> <S-Insert> p
-vnoremap <silent> <Insert> p
 vnoremap <silent> <S-Insert> p
-xnoremap <silent> <Insert> p
 xnoremap <silent> <S-Insert> p
-cnoremap <Insert> <C-r>+
 cnoremap <S-Insert> <C-r>+
+
+inoremap <silent> <Insert> <C-=><C-r>+<C-=>
+nnoremap <silent> <Insert> p
+vnoremap <silent> <Insert> p
+xnoremap <silent> <Insert> p
+cnoremap <Insert> <C-r>+
 
 " Redo last change.
 nnoremap <silent> r <C-r>

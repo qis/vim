@@ -11,10 +11,11 @@ sudo git clone https://github.com/qis/vim /etc/vim
 
 ```
 # General
-[ NV  ] c                 # Copy character or selection to clipboard.
-[ NV  ] CTRL + c          # Copy character or selection to clipboard.
-[INVXC] INSERT            # Paste from clipboard.
+[ NVX ] c                 # Copy character or selection to clipboard.
+[ NVX ] CTRL + c          # Copy character or selection to clipboard.
+[INVXC] CTRL + p          # Paste from clipboard.
 [INVXC] SHIFT + INSERT    # Paste from clipboard.
+[INVXC] INSERT            # Paste from clipboard.
 [ N   ] u                 # Undo last change.
 [ N   ] r                 # Redo last change.
 [IN   ] CTRL + l          # Clear serach.
