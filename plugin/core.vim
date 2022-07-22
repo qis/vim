@@ -148,8 +148,11 @@ autocmd FileType lua set commentstring=--%s
 autocmd FileType vim set commentstring=\"%s
 
 " Clang-Format
-let g:clang_format#command = expand("$ACE/bin/clang-format")
 let g:clang_format#enable_fallback_style = 0
+let g:clang_format#command = exepath(expand("$ACE/bin/clang-format"))
+if empty(g:clang_format#command)
+  let g:clang_format#command = "clang-format"
+endif
 
 " Markdown
 let g:markdown_minlines = 128

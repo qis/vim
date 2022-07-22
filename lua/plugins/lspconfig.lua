@@ -10,8 +10,13 @@ local status = {}
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.update_capabilities(client_capabilities)
 
+local clangd = vim.fn.exepath((path:new(os.getenv("ACE")) / "bin" / "clangd").filename)
+if vim.loop.fs_stat(clangd) == nil then
+  clangd = vim.fn.exepath("clangd")
+end
+
 local cpp = {
-  exec = vim.fn.exepath((path:new(os.getenv("ACE")) / "bin" / "clangd").filename),
+  exec = clangd,
   init = function(exec, root)
     require("lspconfig").clangd.setup({
       filetypes = { "c", "cpp" },
