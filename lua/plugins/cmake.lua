@@ -33,6 +33,7 @@ if vim.g.lsp_cpp then
       request = "launch",
     },
     dap_open_command = dap.repl.open,
+    copy_compile_commands = false,
   })
 end
 
