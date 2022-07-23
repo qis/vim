@@ -35,10 +35,10 @@ local function close(force)
     return
   end
 
-  -- Find and delete current buffer if it is not listed shown the buffer line.
+  -- Find and delete current buffer if it is not shown in the buffer line.
   local buffers = bufferline_buffers.get_components(bufferline_state)
   for _, name in ipairs(buffers) do
-    if name.current then
+    if name:current() then
       if name.id ~= vim.api.nvim_win_get_buf(0) then
         if force then
           vim.cmd("bw!")
@@ -50,6 +50,7 @@ local function close(force)
       break
     end
   end
+
   -- Delete current buffer or quit.
   bufdel.delete_buffer(nil, force)
 end

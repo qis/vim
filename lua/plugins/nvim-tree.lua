@@ -22,12 +22,12 @@ local function tree(buffer)
     return
   end
 
+  local file = nil
   local path = vim.loop.cwd()
-  local file = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p")
   local buffers = bufferline_buffers.get_components(bufferline_state)
   for _, name in ipairs(buffers) do
-    if name.current then
-      file = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(name.id), ":p")
+    if name:current() then
+      file = name.path
       break
     end
   end
@@ -44,9 +44,11 @@ local function tree(buffer)
   nvim_tree_view.open_in_current_win({ hijack_current_buf = true, resize = false })
   nvim_tree_renderer.draw()
 
-  local stat = vim.loop.fs_stat(file)
-  if stat ~= nil and stat.type == "file" then
-    nvim_tree_actions_find_file(file)
+  if file ~= nil then
+    local stat = vim.loop.fs_stat(file)
+    if stat ~= nil and stat.type == "file" then
+      nvim_tree_actions_find_file(file)
+    end
   end
   nvim_tree_actions_refresh()
 end
