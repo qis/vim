@@ -37,9 +37,9 @@ local function tree(buffer)
   else
     vim.api.nvim_command("tabnew")
   end
-  if not nvim_tree_core.get_explorer() or path ~= nvim_tree_core.get_cwd() then
+  -- if not nvim_tree_core.get_explorer() or path ~= nvim_tree_core.get_cwd() then
     nvim_tree_core.init(path)
-  end
+  -- end
 
   nvim_tree_view.open_in_current_win({ hijack_current_buf = true, resize = false })
   nvim_tree_renderer.draw()

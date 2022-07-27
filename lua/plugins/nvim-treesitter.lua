@@ -9,7 +9,7 @@ nvim_treesitter_configs.setup({
     enable = true,
     additional_vim_regex_highlighting = true,
   },
-  indent = { enable = true, disable = { "yaml" } },
+  indent = { enable = false },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,

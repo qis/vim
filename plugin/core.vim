@@ -140,6 +140,11 @@ autocmd BufRead,BufNewFile *.json :silent! set filetype=json5
 " File Type Settings
 autocmd FileType make,changelog :silent! set noexpandtab
 
+" Indentation
+" https://neovim.io/doc/user/indent.html#cinoptions-values
+set cino=:0,l1,g0,N-s,E-s,t0,(0,ws,Ws,m1,j1,J1,)100,*100,P1
+set cindent
+
 " Commentary
 autocmd FileType c,cpp,javascript,json,json5,jsonc,typescript set commentstring=//%s
 autocmd FileType asm,ini set commentstring=;%s
