@@ -45,7 +45,7 @@ local lua = {
   init = function(exec, root, nvim)
     local diagnostics = {}
     local workspace = {}
-    local path = {
+    local paths = {
       "?.lua",
       "?/init.lua",
     }
@@ -59,7 +59,7 @@ local lua = {
         preloadFileSize = 1000,
         maxPreload = 2000,
       }
-      path = vim.split(package.path, ";")
+      paths = vim.split(package.path, ";")
     end
     require("lspconfig").sumneko_lua.setup({
       filetypes = { "lua" },
@@ -68,7 +68,7 @@ local lua = {
         Lua = {
           runtime = {
             version = "LuaJIT",
-            path = path,
+            path = paths,
           },
           completion = {
             enable = true,
@@ -82,7 +82,7 @@ local lua = {
         },
       },
       root_dir = function()
-        return root
+        return tostring(root)
       end,
       capabilities = capabilities,
     })
