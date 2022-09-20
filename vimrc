@@ -20,7 +20,7 @@ set splitright
 set noswapfile
 set termguicolors
 set timeoutlen=1000
-set undofile
+set noundofile
 set updatetime=100
 set nowritebackup
 
