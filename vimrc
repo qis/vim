@@ -1,3 +1,8 @@
+" Runtime
+if (isdirectory('/etc/vim'))
+  set runtimepath+=/etc/vim
+endif
+
 " Options
 set nobackup
 set conceallevel=0
