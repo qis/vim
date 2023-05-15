@@ -10,7 +10,7 @@
 
 " Keymaps
 if exists('g:loaded_keymaps')
-    finish
+  finish
 endif
 
 let g:loaded_keymaps = 1
@@ -66,7 +66,10 @@ inoremap <silent> <C-l> <C-o>:noh<CR>
 inoremap <silent> <C-Del> <C-o>dw
 
 " Delete word before cursor.
+inoremap <C-h> <C-w>
+cnoremap <C-h> <C-w>
 inoremap <silent> <C-Backspace> <C-w>
+cnoremap <silent> <C-Backspace> <C-w>
 
 " Move to the beginning of a function.
 inoremap <silent> <C-Up> <C-o>[[
