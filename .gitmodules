@@ -55,3 +55,6 @@
 [submodule "pack/plugins/opt/cmake"]
 	path = pack/plugins/opt/cmake
 	url = https://github.com/qis/neovim-cmake
+[submodule "pack/plugins/opt/visual-multi"]
+	path = pack/plugins/opt/visual-multi
+	url = https://github.com/mg979/vim-visual-multi
