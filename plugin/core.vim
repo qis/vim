@@ -200,13 +200,15 @@ let g:markdown_fenced_languages = [
   \]
 
 " Visual Multi
-let g:VM_maps                       = {}
-let g:VM_maps["Undo"]               = 'u'
-let g:VM_maps["Redo"]               = '<C-r>'
-let g:VM_maps["Select All"]         = '<Leader>a'
-let g:VM_maps["Start Regex Search"] = '<Leader>/'
-let g:VM_maps["Add Cursor At Pos"]  = '<C-Space>'
-packadd visual-multi
+if has('nvim')
+  let g:VM_maps                       = {}
+  let g:VM_maps["Undo"]               = 'u'
+  let g:VM_maps["Redo"]               = '<C-r>'
+  let g:VM_maps["Select All"]         = '<Leader>a'
+  let g:VM_maps["Start Regex Search"] = '<Leader>/'
+  let g:VM_maps["Add Cursor At Pos"]  = '<C-Space>'
+  packadd visual-multi
+endif
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
