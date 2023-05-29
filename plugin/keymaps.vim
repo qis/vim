@@ -121,6 +121,7 @@ xnoremap <silent> <S-PageDown> <C-d>
 
 " Focus next window.
 nnoremap <silent> <Tab> <C-w>w
+nnoremap <silent> <S-Tab> <C-w>p
 
 " Write buffer.
 inoremap <silent> <C-s> <C-o>:w<CR>

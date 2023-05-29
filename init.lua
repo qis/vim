@@ -80,6 +80,17 @@ vim.cmd("packadd popup")
 -- https://github.com/L3MON4D3/LuaSnip
 vim.cmd("packadd luasnip")
 
+-- https://github.com/mfussenegger/nvim-dap
+vim.cmd("packadd dap")
+require("plugins.dap")
+
+-- https://github.com/rcarriga/nvim-dap-ui
+vim.cmd("packadd dapui")
+require("plugins.dapui")
+
+-- https://github.com/rcarriga/cmp-dap
+vim.cmd("packadd cmp_dap")
+
 -- https://github.com/hrsh7th/cmp-nvim-lsp
 vim.cmd("packadd cmp_nvim_lsp")
 
@@ -104,14 +115,6 @@ require("plugins.nvim-tree")
 
 -- https://github.com/rhysd/vim-clang-format
 vim.cmd("packadd clang-format")
-
--- https://github.com/mfussenegger/nvim-dap
-vim.cmd("packadd dap")
-require("plugins.dap")
-
--- https://github.com/rcarriga/nvim-dap-ui
-vim.cmd("packadd dapui")
-require("plugins.dapui")
 
 -- https://github.com/nvim-telescope/telescope-dap.nvim
 vim.cmd("packadd telescope-dap")

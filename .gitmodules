@@ -22,6 +22,15 @@
 [submodule "pack/plugins/opt/luasnip"]
 	path = pack/plugins/opt/luasnip
 	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "pack/plugins/opt/dap"]
+	path = pack/plugins/opt/dap
+	url = https://github.com/mfussenegger/nvim-dap
+[submodule "pack/plugins/opt/dapui"]
+	path = pack/plugins/opt/dapui
+	url = https://github.com/rcarriga/nvim-dap-ui
+[submodule "pack/plugins/opt/cmp_dap"]
+	path = pack/plugins/opt/cmp_dap
+	url = https://github.com/rcarriga/cmp-dap
 [submodule "pack/plugins/opt/cmp_nvim_lsp"]
 	path = pack/plugins/opt/cmp_nvim_lsp
 	url = https://github.com/hrsh7th/cmp-nvim-lsp
@@ -43,12 +52,6 @@
 [submodule "pack/plugins/opt/clang-format"]
 	path = pack/plugins/opt/clang-format
 	url = https://github.com/rhysd/vim-clang-format
-[submodule "pack/plugins/opt/dap"]
-	path = pack/plugins/opt/dap
-	url = https://github.com/mfussenegger/nvim-dap
-[submodule "pack/plugins/opt/dapui"]
-	path = pack/plugins/opt/dapui
-	url = https://github.com/rcarriga/nvim-dap-ui
 [submodule "pack/plugins/opt/telescope-dap"]
 	path = pack/plugins/opt/telescope-dap
 	url = https://github.com/nvim-telescope/telescope-dap.nvim

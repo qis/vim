@@ -13,7 +13,7 @@ dap.adapters.lldb = {
   end)(),
   enrich_config = function(config, on_config)
     on_config(config)
-    --require("dapui").open()
+    require("dapui").open()
   end,
 }
 

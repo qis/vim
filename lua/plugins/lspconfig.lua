@@ -8,14 +8,17 @@ local handlers = {
 
 local on_attach = function(client, buffer)
   -- Enable completion triggered by <c-x><c-o>.
-  vim.api.nvim_buf_set_option(buffer, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  --vim.api.nvim_buf_set_option(buffer, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local options = { noremap = true, silent = true, buffer = buffer }
   vim.keymap.set('n', '<Leader>t', vim.lsp.buf.hover, options)
 end
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
+--local capabilities = cmp_nvim_lsp.default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.supportsCompletionsRequest = false
+capabilities.textDocument.completion = {}
 
 require("lspconfig").clangd.setup({
   filetypes = { "c", "cpp" },

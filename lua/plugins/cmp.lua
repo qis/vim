@@ -34,6 +34,9 @@ completion.max_width = 40
 documentation.max_width = 80
 
 cmp.setup({
+  enabled = function()
+    return vim.bo.buftype ~= "prompt" and vim.bo.buftype ~= "nofile"
+  end,
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -53,6 +56,7 @@ cmp.setup({
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
+    { name = "dap" },
   }, {
     { name = "buffer" },
   }),
@@ -72,18 +76,22 @@ cmp.setup({
   },
 })
 
-cmp.setup.cmdline("/", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = "buffer" }
-  }
-})
+--cmp.setup.cmdline("/", {
+--  mapping = cmp.mapping.preset.cmdline(),
+--  sources = {
+--    { name = "buffer" }
+--  }
+--})
 
-cmp.setup.cmdline(":", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = "path" }
-  }, {
-    { name = "cmdline" }
-  })
-})
+--cmp.setup.cmdline(":", {
+--  mapping = cmp.mapping.preset.cmdline(),
+--  sources = cmp.config.sources({
+--    { name = "path" }
+--  }, {
+--    { name = "cmdline" }
+--  })
+--})
+
+--cmp.setup.filetype({ "dap-repl", "dapui_watches" }, {
+--  enabled = false,
+--})
