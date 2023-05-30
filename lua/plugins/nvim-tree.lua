@@ -273,7 +273,7 @@ require("nvim-tree").setup({
 
     -- Show diagnostic sign column. Value can be `"yes"`, `"auto"`, `"no"`.
     -- Type: `string`, Default: `"yes"`
-    signcolumn = "auto",
+    signcolumn = "yes",
 
     -- Configuration options for floating window.
     float = {
