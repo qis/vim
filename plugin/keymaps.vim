@@ -36,7 +36,7 @@ vnoremap <silent> <C-c> y
 xnoremap <silent> <C-c> y
 
 " Paste from clipboard.
-set pastetoggle=<C-=>
+"set pastetoggle=<C-=>
 
 inoremap <silent> <C-p> <C-=><C-r>+<C-=>
 nnoremap <silent> <C-p> p

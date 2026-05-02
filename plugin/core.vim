@@ -12,8 +12,9 @@ set cursorline
 set nocursorcolumn
 
 " Line numbers.
-set relativenumber
-set numberwidth=2
+set number
+"set relativenumber
+"set numberwidth=2
 
 " Status Line
 hi! link StatusMode StatusNormalBold

@@ -22,12 +22,18 @@
 [submodule "pack/plugins/opt/luasnip"]
 	path = pack/plugins/opt/luasnip
 	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "pack/plugins/opt/nio"]
+	path = pack/plugins/opt/nio
+	url = https://github.com/nvim-neotest/nvim-nio
 [submodule "pack/plugins/opt/dap"]
 	path = pack/plugins/opt/dap
 	url = https://github.com/mfussenegger/nvim-dap
 [submodule "pack/plugins/opt/dapui"]
 	path = pack/plugins/opt/dapui
 	url = https://github.com/rcarriga/nvim-dap-ui
+[submodule "pack/plugins/opt/cmp"]
+	path = pack/plugins/opt/cmp
+	url = https://github.com/hrsh7th/nvim-cmp
 [submodule "pack/plugins/opt/cmp_dap"]
 	path = pack/plugins/opt/cmp_dap
 	url = https://github.com/rcarriga/cmp-dap
@@ -37,9 +43,6 @@
 [submodule "pack/plugins/opt/cmp_nvim_lsp_signature_help"]
 	path = pack/plugins/opt/cmp_nvim_lsp_signature_help
 	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
-[submodule "pack/plugins/opt/cmp"]
-	path = pack/plugins/opt/cmp
-	url = https://github.com/hrsh7th/nvim-cmp
 [submodule "pack/plugins/opt/lspconfig"]
 	path = pack/plugins/opt/lspconfig
 	url = https://github.com/neovim/nvim-lspconfig

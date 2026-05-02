@@ -100,17 +100,6 @@ require("nvim-tree").setup({
     ignore_list = {},
   },
 
-  -- Open a file or directory in an external application.
-  system_open = {
-    -- The open command itself (leave empty for OS specific default).
-    -- Type: `string`, Default: `""`
-    cmd = "",
-
-    -- Optional argument list (leave empty for OS specific default).
-    -- Type: {string}, Default: `{}`
-    args = {},
-  },
-
   -- Show LSP and COC diagnostics in the signcolumn
   diagnostics = {
     -- Enable the feature.

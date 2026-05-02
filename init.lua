@@ -80,6 +80,9 @@ vim.cmd("packadd popup")
 -- https://github.com/L3MON4D3/LuaSnip
 vim.cmd("packadd luasnip")
 
+-- https://github.com/nvim-neotest/nvim-nio
+vim.cmd("packadd nio")
+
 -- https://github.com/mfussenegger/nvim-dap
 vim.cmd("packadd dap")
 require("plugins.dap")
@@ -87,6 +90,10 @@ require("plugins.dap")
 -- https://github.com/rcarriga/nvim-dap-ui
 vim.cmd("packadd dapui")
 require("plugins.dapui")
+
+-- https://github.com/hrsh7th/nvim-cmp
+vim.cmd("packadd cmp")
+require("plugins.cmp")
 
 -- https://github.com/rcarriga/cmp-dap
 vim.cmd("packadd cmp_dap")
@@ -97,17 +104,13 @@ vim.cmd("packadd cmp_nvim_lsp")
 -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 vim.cmd("packadd cmp_nvim_lsp_signature_help")
 
--- https://github.com/hrsh7th/nvim-cmp
-vim.cmd("packadd cmp")
-require("plugins.cmp")
-
 -- https://github.com/neovim/nvim-lspconfig
 vim.cmd("packadd lspconfig")
 require("plugins.lspconfig")
 
 -- https://github.com/nvim-treesitter/nvim-treesitter
-vim.cmd("packadd nvim-treesitter")
-require("plugins.nvim-treesitter")
+--vim.cmd("packadd nvim-treesitter")
+--require("plugins.nvim-treesitter")
 
 -- https://github.com/kyazdani42/nvim-tree.lua
 vim.cmd("packadd nvim-tree")
