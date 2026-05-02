@@ -74,9 +74,9 @@ else
 endif
 
 " General
-let s:cdNone               = { 'gui': 'NONE',    'cterm': 'NONE',    'cterm256': 'NONE' }
 let s:cdFront              = { 'gui': '#D4D4D4', 'cterm': s:cterm05, 'cterm256':  '188' }
 let s:cdBack               = { 'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256':  '234' }
+let s:cdNone               = { 'gui': 'NONE',    'cterm': 'NONE',    'cterm256': 'NONE' }
 
 let s:cdTabCurrent         = { 'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256':  '234' }
 let s:cdTabOther           = { 'gui': '#2D2D2D', 'cterm': s:cterm01, 'cterm256':  '236' }
@@ -132,19 +132,19 @@ let s:cdSilver             = { 'gui': '#C0C0C0', 'cterm': s:cterm05, 'cterm256':
 " =======================================================================================
 " Editor
 " =======================================================================================
-call <sid>hi('Normal', s:cdFront, s:cdBack, 'none', {})
+call <sid>hi('Normal', s:cdFront, s:cdNone, 'none', {})
 call <sid>hi('ColorColumn', {}, s:cdCursorDarkDark, 'none', {})
 call <sid>hi('Cursor', s:cdCursorDark, s:cdCursorLight, 'none', {})
 call <sid>hi('CursorColumn', {}, s:cdCursorDarkDark, 'none', {})
-call <sid>hi('CursorLine', {}, s:cdBack, 'none', {})
-call <sid>hi('CursorLineNr', s:cdPopupFront, s:cdBack, 'none', {})
+call <sid>hi('CursorLine', {}, s:cdNone, 'none', {})
+call <sid>hi('CursorLineNr', s:cdPopupFront, s:cdNone, 'none', {})
 call <sid>hi('Directory', s:cdBlue, {}, 'none', {})
-call <sid>hi('EndOfBuffer', s:cdLineNumber, s:cdBack, 'none', {})
-call <sid>hi('ErrorMsg', s:cdRed, s:cdBack, 'none', {})
-call <sid>hi('FoldColumn', s:cdLineNumber, s:cdBack, 'none', {})
+call <sid>hi('EndOfBuffer', s:cdLineNumber, s:cdNone, 'none', {})
+call <sid>hi('ErrorMsg', s:cdRed, s:cdNone, 'none', {})
+call <sid>hi('FoldColumn', s:cdLineNumber, s:cdNone, 'none', {})
 call <sid>hi('Folded', s:cdLeftLight, s:cdLeftDark, 'underline', {})
 call <sid>hi('IncSearch', s:cdNone, s:cdSearchCurrent, 'none', {})
-call <sid>hi('LineNr', s:cdLineNumber, s:cdBack, 'none', {})
+call <sid>hi('LineNr', s:cdLineNumber, s:cdNone, 'none', {})
 call <sid>hi('MatchParen', s:cdNone, s:cdCursorDark, 'none', {})
 call <sid>hi('ModeMsg', s:cdFront, s:cdLeftDark, 'none', {})
 call <sid>hi('MoreMsg', s:cdFront, s:cdLeftDark, 'none', {})
@@ -153,17 +153,15 @@ call <sid>hi('Pmenu', s:cdPopupFront, s:cdPopupBack, 'none', {})
 call <sid>hi('PmenuSbar', {}, s:cdPopupHighlightGray, 'none', {})
 call <sid>hi('PmenuSel', s:cdPopupFront, s:cdPopupHighlightBlue, 'none', {})
 call <sid>hi('PmenuThumb', {}, s:cdPopupFront, 'none', {})
-call <sid>hi('Question', s:cdBlue, s:cdBack, 'none', {})
+call <sid>hi('Question', s:cdBlue, s:cdNone, 'none', {})
 call <sid>hi('Search', s:cdNone, s:cdSearch, 'none', {})
-call <sid>hi('SignColumn', {}, s:cdBack, 'none', {})
+call <sid>hi('SignColumn', {}, s:cdNone, 'none', {})
 call <sid>hi('SpecialKey', s:cdBlue, s:cdNone, 'none', {})
-call <sid>hi('StatusLine', s:cdFront, s:cdLeftMid, 'none', {})
-call <sid>hi('StatusLineNC', s:cdFront, s:cdLeftDark, 'none', {})
 call <sid>hi('Title', s:cdNone, s:cdNone, 'bold', {})
-call <sid>hi('VertSplit', s:cdSplitDark, s:cdBack, 'none', {})
+call <sid>hi('VertSplit', s:cdSplitDark, s:cdNone, 'none', {})
 call <sid>hi('Visual', s:cdNone, s:cdSelection, 'none', {})
 call <sid>hi('VisualNOS', s:cdNone, s:cdSelection, 'none', {})
-call <sid>hi('WarningMsg', s:cdOrange, s:cdBack, 'none', {})
+call <sid>hi('WarningMsg', s:cdOrange, s:cdNone, 'none', {})
 call <sid>hi('WildMenu', s:cdNone, s:cdSelection, 'none', {})
 
 call <sid>hi('DiffAdd', {}, s:cdDiffGreenLight, 'none', {})
@@ -171,10 +169,10 @@ call <sid>hi('DiffChange', {}, s:cdDiffBlue, 'none', {})
 call <sid>hi('DiffDelete', {}, s:cdDiffRedLight, 'none', {})
 call <sid>hi('DiffText', s:cdBack, s:cdDiffBlueLight, 'none', {})
 
-call <sid>hi('SpellBad', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
-call <sid>hi('SpellCap', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
-call <sid>hi('SpellLocal', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
-call <sid>hi('SpellRare', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
+call <sid>hi('SpellBad', s:cdRed, s:cdNone, 'undercurl', s:cdRed)
+call <sid>hi('SpellCap', s:cdRed, s:cdNone, 'undercurl', s:cdRed)
+call <sid>hi('SpellLocal', s:cdRed, s:cdNone, 'undercurl', s:cdRed)
+call <sid>hi('SpellRare', s:cdRed, s:cdNone, 'undercurl', s:cdRed)
 
 " =======================================================================================
 " Syntax
@@ -187,7 +185,7 @@ call <sid>hi('Constant', s:cdBlue, {}, 'none', {})
 call <sid>hi('Debug', s:cdFront, {}, 'none', {})
 call <sid>hi('Define', s:cdPink, {}, 'none', {})
 call <sid>hi('Delimiter', s:cdFront, {}, 'none', {})
-call <sid>hi('Error', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
+call <sid>hi('Error', s:cdRed, s:cdNone, 'undercurl', s:cdRed)
 call <sid>hi('Exception', s:cdPink, {}, 'none', {})
 call <sid>hi('Float', s:cdLightGreen, {}, 'none', {})
 call <sid>hi('Function', s:cdYellow, {}, 'none', {})
@@ -214,7 +212,7 @@ call <sid>hi('Todo', s:cdNone, s:cdLeftMid, 'none', {})
 call <sid>hi('Type', s:cdBlue, {}, 'none', {})
 call <sid>hi('Typedef', s:cdBlue, {}, 'none', {})
 call <sid>hi('Underlined', s:cdNone, {}, 'underline', {})
-call <sid>hi("Conceal", s:cdFront, s:cdBack, 'none', {})
+call <sid>hi("Conceal", s:cdFront, s:cdNone, 'none', {})
 
 " Markdown
 call <sid>hi('markdownBold', s:cdBlue, {}, 'bold', {})
@@ -607,7 +605,7 @@ call <sid>hi('TSTagDelimiter', s:cdGray, {}, 'none', {})
 " =======================================================================================
 " Tree
 " =======================================================================================
-call <sid>hi('NvimTreeEndOfBuffer', s:cdBack, s:cdBack, 'none', {})
+call <sid>hi('NvimTreeEndOfBuffer', s:cdBack, s:cdNone, 'none', {})
 call <sid>hi('NvimTreeCursorLine', {}, s:cdPopupHighlightGray, 'none', {})
 
 hi link NvimTreeFolderIcon Directory
@@ -623,6 +621,8 @@ call <sid>hi('GitSignsDelete', s:cdRed, {}, 'bold', {})
 " =======================================================================================
 " Status Line
 " =======================================================================================
+call <sid>hi('StatusLine', s:cdPopupFront, s:cdNone, 'none', {})
+call <sid>hi('StatusLineNC', s:cdPopupHighlightGray, s:cdNone, 'none', {})
 call <sid>hi('StatusNormal', s:cdBack, s:cdGreen, 'none', {})
 call <sid>hi('StatusNormalBold', s:cdBack, s:cdGreen, 'bold', {})
 call <sid>hi('StatusVisual', s:cdBack, s:cdViolet, 'none', {})
@@ -632,15 +632,15 @@ call <sid>hi('StatusInsertBold', s:cdBack, s:cdBlue, 'bold', {})
 call <sid>hi('StatusReplace', s:cdBack, s:cdRed, 'none', {})
 call <sid>hi('StatusReplaceBold', s:cdBack, s:cdRed, 'bold', {})
 call <sid>hi('StatusInfo', s:cdPopupFront, s:cdPopupHighlightGray, 'none', {})
-call <sid>hi('StatusFile', s:cdPopupFront, s:cdPopupBack, 'none', {})
-call <sid>hi('StatusFileReadonly', s:cdRed, s:cdPopupBack, 'none', {})
+call <sid>hi('StatusFile', {}, s:cdNone, 'none', {})
+call <sid>hi('StatusFileReadonly', s:cdRed, s:cdNone, 'none', {})
 
 " =======================================================================================
 " Tab Line
 " =======================================================================================
-hi! link TabLine StatusInfo
-hi! link TabLineSel StatusNormal
-hi! link TabLineFill StatusFile
+call <sid>hi('TabLine', s:cdNone, s:cdNone, 'none', {})
+call <sid>hi('TabLineSel', s:cdNone, s:cdNone, 'none', {})
+call <sid>hi('StatusFile', s:cdNone, s:cdNone, 'none', {})
 
 " =======================================================================================
 " Diagnostics

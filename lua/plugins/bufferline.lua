@@ -78,6 +78,7 @@ bufferline.setup({
     mode = "buffers",
     show_close_icon = false,
     show_buffer_close_icons = false,
+    indicator = { icon = "", style = "icon" },
     separator_style = "thin",
     custom_filter = function(i, _)
       if not vim.api.nvim_buf_is_valid(i) then
